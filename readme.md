@@ -54,12 +54,7 @@
    ```
 3. Create a `.env` in the backend
    ```
-MYSQL_PASSWORD=""
-MYSQL_HOST=""
-MYSQL_USER=""
-MYSQL_PASSWORD=""
-MYSQL_DATABASE=""
-SECRET_KEY=""
+   Look inside the .env-example file
    ```
 
 
@@ -71,8 +66,3 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-[product-screenshot]: images/index.png
-[product-screenshot1]: images/dashboard.png
-[product-screenshot2]: images/transfer.png
