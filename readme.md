@@ -21,11 +21,11 @@
 <!-- Preview -->
 ## Preview
 
-[![Product Name Screen Shot][product-screenshot]]
+<img src="images/index.png" alt="Logo">
 <br />
-[![Product Name Screen Shot][product-screenshot1]]
+<img src="images/dashboard.png" alt="Logo">
 <br />
-[![Product Name Screen Shot][product-screenshot2]]
+<img src="images/transfer.png" alt="Logo">
 
 
 <!-- ROADMAP -->
@@ -59,7 +59,6 @@ MYSQL_HOST=""
 MYSQL_USER=""
 MYSQL_PASSWORD=""
 MYSQL_DATABASE=""
-# JWT
 SECRET_KEY=""
    ```
 
