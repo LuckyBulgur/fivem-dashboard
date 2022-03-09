@@ -2,6 +2,8 @@ import Cookies from 'js-cookie';
 import getConfig from 'next/config';
 import { useMutation } from 'react-query';
 
+import { queryClient } from '../pages/_app';
+
 const { publicRuntimeConfig } = getConfig()
 
 const transferCarMutation = () => useMutation(async (data: { name: string, plate: string }) => {
@@ -18,6 +20,10 @@ const transferCarMutation = () => useMutation(async (data: { name: string, plate
         }),
     });
     return await response.json()
+}, {
+    onSuccess: () => {
+        queryClient.invalidateQueries('vehicles');
+    }
 });
 
 export default transferCarMutation;

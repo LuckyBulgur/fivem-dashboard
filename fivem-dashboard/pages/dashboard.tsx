@@ -8,6 +8,8 @@ import { TransferCarForm } from '../components/transfer-car-form';
 import { formatDollar } from '../helpers/formatDollar';
 import { formatPercent } from '../helpers/formatPercent';
 import useUser from '../hooks/use-user';
+import useUserList from '../hooks/use-user-list';
+import useVehicles from '../hooks/use-vehicles';
 
 import type { NextPage } from 'next'
 //import { isMobile } from 'react-device-detect';
@@ -19,6 +21,9 @@ const Dashboard: NextPage = () => {
     Cookies.set('access_token', access_token, { expires: 365 });
 
     const user = useUser(access_token);
+
+    const userList = useUserList();
+    const vehicles = useVehicles();
 
     return (
         <div className="min-h-screen flex min-w-screen align-center justify-center flex-col bg-gradient-to-t from-myblue to-second">
@@ -52,7 +57,10 @@ const Dashboard: NextPage = () => {
                         </div>
 
                         <div className='flex justify-center sm:mt-10'>
-                            <TransferCarForm></TransferCarForm>
+                            {
+                                userList.isSuccess && userList.data && vehicles.isSuccess && vehicles.data &&
+                                <TransferCarForm vehicles={vehicles.data} userList={userList.data}></TransferCarForm>
+                            }
                         </div>
                     </Card>
                 }

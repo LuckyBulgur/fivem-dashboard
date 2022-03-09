@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import type { AppProps } from 'next/app'
 const { publicRuntimeConfig } = getConfig()
 
+export const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <>
@@ -17,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <meta name="description" content="Verwalte deine Schulaufgaben ganz einfach" />
       <meta name="theme-color" content="#0f2027"></meta>
     </Head>
-    <QueryClientProvider client={new QueryClient()}>
+    <QueryClientProvider client={queryClient}>
       <Component {...pageProps} />
     </QueryClientProvider>
   </>
