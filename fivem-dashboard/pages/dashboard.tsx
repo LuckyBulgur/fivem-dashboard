@@ -42,16 +42,16 @@ const Dashboard: NextPage = () => {
                         <div className='flex mt-10 justify-center text-fontwhite'>
                             <div className='flex justify-between w-72 sm:w-96'>
                                 <Tooltip text={`Du bist ${100 - parseInt(JSON.parse(user.data.status)[0].percent)}% hungrig`}>
-                                    <CircularItem>{formatPercent(JSON.parse(user.data.status)[0].percent)}</CircularItem>
+                                    <CircularItem className='border-2 border-amber-600'>{formatPercent(JSON.parse(user.data.status)[0].percent)}</CircularItem>
                                 </Tooltip>
                                 <Tooltip text={`Du bist ${100 - parseInt(JSON.parse(user.data.status)[1].percent)}% durstig`}>
-                                    <CircularItem>{formatPercent(JSON.parse(user.data.status)[1].percent)}</CircularItem>
+                                    <CircularItem className='border-2 border-blue-700'>{formatPercent(JSON.parse(user.data.status)[1].percent)}</CircularItem>
                                 </Tooltip>
                                 <Tooltip text={`Du bist ${formatPercent(JSON.parse(user.data.status)[2].percent)} betrunken`}>
-                                    <CircularItem>{formatPercent(JSON.parse(user.data.status)[2].percent)}</CircularItem>
+                                    <CircularItem className='border-2 border-violet-700'>{formatPercent(JSON.parse(user.data.status)[2].percent)}</CircularItem>
                                 </Tooltip>
                                 <Tooltip text={user.data.is_dead ? "Du bist Tot" : "Du bist am Leben"}>
-                                    <CircularItem>{user.data.is_dead ? "Tot" : "Leben"}</CircularItem>
+                                    <CircularItem className={`border-2 ` + (user.data.is_dead ? "border-red" : "border-green-700")}>{user.data.is_dead ? "Tot" : "Leben"}</CircularItem>
                                 </Tooltip>
                             </div>
                         </div>

@@ -1,7 +1,6 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   publicRuntimeConfig: {
-    serverUrl: (process.env.NODE_ENV == "development") ? 'http://localhost:3001' : 'https://server.domain.de',
+    serverUrl: (process.env.NODE_ENV == "development") ? 'http://localhost:3001' : process.env.SERVER_URL,
   },
   reactStrictMode: true,
   i18n: {

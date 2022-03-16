@@ -52,7 +52,6 @@ export const TransferCarForm: FC<TransferCarProps> = (props: TransferCarProps) =
             }
             catch (error) {
                 setIsLoading(true);
-                console.log(error);
             }
         }
     });

@@ -19,7 +19,6 @@ const HomePage: FC<HomePageProps> = ({ primaryText, secondaryText }) => {
 
     const user = useUser();
 
-    console.log(user);
     return (
         <div className="flex h-5/6 justify-center pl-5 pr-5">
             <div className="text-fontwhite max-w-5xl relative pt-20 sm:pt-24 lg:pt-32">
